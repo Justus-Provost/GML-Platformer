@@ -10,42 +10,29 @@ key_dash = keyboard_check_pressed(vk_lalt);
 // calculate movement
 var _move = ((key_sprint/2)+1)*(key_right - key_left)*((dash) + 1);
 
-//dashsp = (key_right - key_left)*
-
 hsp = _move * walksp;
 
 vsp = vsp + grv;
 
 dashable = dashable - .1;
-//dash = dash + .1
+
 dash = dash - .5;
-if (key_dash) && (dashable <= 0){
+
+// dashing logic
+if (key_dash) && (dashable <= 0) && ((key_right - key_left) != 0){
 	dash = 4;
 	dashable = 4;
 }
-
-//if (key_dash){
-//	dash = dash - .5;
-//}
 if (dash <= 0){
 	dash = 0;
 }
 if (dash >= 4){
 	dash = 4;
 }
+
 if (place_meeting(x,y+1,obj_invisiblewall)) && (key_jump){
 	vsp = -jumpsp;
-	
-	
 }
-
-// dash logic
-//if (place_meeting(x,y+1,obj_invisiblewall)){
-//	dash = 1;
-//}
-//if (dash <= 1) && (key_dash){
-//	x = 8
-//}
 
 // horizintal collision
 if (place_meeting(x+hsp,y,obj_invisiblewall)){
