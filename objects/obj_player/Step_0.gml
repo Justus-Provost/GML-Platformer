@@ -8,26 +8,30 @@ key_sprint = keyboard_check(vk_down);
 key_dash = keyboard_check_pressed(vk_lalt);
 
 // calculate movement
-var _move = ((key_sprint/2)+1)*(key_right - key_left)*((dash) + 1);
+var _move = (key_right - key_left);
 
-hsp = _move * walksp;
+hsp = _move * (walksp)*(sprint);
+hsp = hsp + (key_right - key_left)*((dash) + 1)
 
 vsp = vsp + grv;
 
 dashable = dashable - .1;
 
-dash = dash - .5;
+dash = dash - 1.25;
+
+// sprinting logic
+if (key_sprint == true) sprint = 1.75;else sprint = 1;
 
 // dashing logic
 if (key_dash) && (dashable <= 0) && ((key_right - key_left) != 0){
-	dash = 4;
+	dash = 15;
 	dashable = 4;
 }
 if (dash <= 0){
 	dash = 0;
 }
-if (dash >= 4){
-	dash = 4;
+if (dash >= 15){
+	dash = 15;
 }
 
 if (place_meeting(x,y+1,obj_invisiblewall)) && (key_jump){
@@ -70,5 +74,7 @@ else {
 }
 if (hsp != 0) image_xscale = sign(hsp);
 
-
+//with(obj_dashalert){
+//	image_alpha = other(dashable)*(100/16)
+//}
 
