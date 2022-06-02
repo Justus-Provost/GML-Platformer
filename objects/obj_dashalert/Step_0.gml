@@ -8,4 +8,3 @@ if (key_dash) && (dashable <= 0) && ((key_right - key_left) != 0){
 }
 
 if (dashable <= 0) image_alpha = 100;else image_alpha = 0;
-//image_alpha = 100 - (dashable*25);

@@ -17,22 +17,24 @@ vsp = vsp + grv;
 
 dashable = dashable - .1;
 
-dash = dash - 1.25;
+dash = dash - 1.5;
 
 // sprinting logic
 if (key_sprint == true) sprint = 1.75;else sprint = 1;
 
 // dashing logic
 if (key_dash) && (dashable <= 0) && ((key_right - key_left) != 0){
-	dash = 15;
+	dash = 16.5;
 	dashable = 4;
 }
 if (dash <= 0){
 	dash = 0;
 }
-if (dash >= 15){
-	dash = 15;
-}
+//if (dash >= 15){
+//	dash = 15;
+//}
+//if (dash > 0) hsp = (key_right - key_left)*(dash);else hsp = _move * (walksp)*(sprint);
+
 
 if (place_meeting(x,y+1,obj_invisiblewall)) && (key_jump){
 	vsp = -jumpsp;
@@ -74,7 +76,4 @@ else {
 }
 if (hsp != 0) image_xscale = sign(hsp);
 
-//with(obj_dashalert){
-//	image_alpha = other(dashable)*(100/16)
-//}
 
