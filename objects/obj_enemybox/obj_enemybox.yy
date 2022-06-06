@@ -1,7 +1,7 @@
 {
   "spriteId": {
-    "name": "spr_winbox",
-    "path": "sprites/spr_winbox/spr_winbox.yy",
+    "name": "spr_enemybox",
+    "path": "sprites/spr_enemybox/spr_enemybox.yy",
   },
   "solid": false,
   "visible": false,
@@ -28,7 +28,7 @@
     "path": "folders/Objects.yy",
   },
   "resourceVersion": "1.0",
-  "name": "obj_winbox",
+  "name": "obj_enemybox",
   "tags": [],
   "resourceType": "GMObject",
 }

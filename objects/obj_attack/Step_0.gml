@@ -6,6 +6,6 @@ if (keyboard_check_pressed(88)){
 attack = attack -.1
 //attack = (keyboard_check_pressed(88));
 if (attack > 0) image_xscale = side;else image_xscale = 0;
-x = (x,obj_player) + (18 * side);
+//x = with(obj_player,x) + (18 * side);
 //y = with(y,obj_player); 
 //y = y with(obj_player){y};
