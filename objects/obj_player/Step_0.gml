@@ -1,5 +1,5 @@
 /// @desc Core player logic
-
+ready -= 1/30;
 // get player inputs
 key_left = keyboard_check(vk_left);
 key_right = keyboard_check(vk_right);
@@ -8,10 +8,12 @@ key_sprint = keyboard_check(vk_down);
 key_dash = keyboard_check_pressed(ord("C"));
 
 // calculate movement
-var _move = (key_right - key_left);
+if (ready <= 0){
+	var _move = (key_right - key_left);
 
-hsp = _move * (walksp)*(sprint);
-hsp = hsp + (key_right - key_left)*((dash) + 1)
+	hsp = _move * (walksp)*(sprint);
+	hsp = hsp + (key_right - key_left)*((dash) + 1)
+}
 
 vsp = vsp + grv;
 
@@ -30,9 +32,15 @@ if (key_dash) && (dashable <= 0) && ((key_right - key_left) != 0){
 if (dash <= 0){
 	dash = 0;
 }
-//if (dash >= 15){
-//	dash = 15;
-//}
+if (dashable <= 0){
+	with obj_dashalert{
+		image_alpha = 1;
+	}
+}else{
+	with obj_dashalert{
+		image_alpha = 0;
+	}
+}
 //if (dash > 0) hsp = (key_right - key_left)*(dash);else hsp = _move * (walksp)*(sprint);
 
 

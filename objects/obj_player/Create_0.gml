@@ -7,3 +7,4 @@ jumpsp = 12;
 dash = 4;
 dashable = 4;
 sprint = 1;
+ready = 1;
