@@ -1,2 +1,2 @@
 score = 0;
-rooms = 1;
+rooms = 0;
