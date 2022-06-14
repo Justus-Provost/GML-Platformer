@@ -41,7 +41,7 @@ if (dashable <= 0){
 		image_alpha = 0;
 	}
 }
-//if (dash > 0) hsp = (key_right - key_left)*(dash);else hsp = _move * (walksp)*(sprint);
+
 
 
 if (place_meeting(x,y+1,obj_invisiblewall)) && (key_jump){

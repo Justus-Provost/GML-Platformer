@@ -1,3 +1,4 @@
+// Switching levels
 room_goto_next();
 with obj_controller{
 	rooms += 1;
