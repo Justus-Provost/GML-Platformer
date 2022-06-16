@@ -1,3 +1,6 @@
+if keyboard_check_pressed(ord("R")){
+	game_restart()
+}
 // Title screen
 if room == Title{
 	if (keyboard_check_pressed(vk_enter) == true){
